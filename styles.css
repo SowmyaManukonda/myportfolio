@@ -22,6 +22,7 @@ header {
     background: #333;
     color: #fff;
     padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -45,11 +46,13 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: #fff;
-    transition: color 0.3s;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .nav-links a:hover {
     color: #00bcd4;
+    transform: scale(1.05);
 }
 
 .hero {
@@ -75,13 +78,15 @@ nav {
     background: #00bcd4;
     padding: 0.5rem 1.5rem;
     border-radius: 5px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s, filter 0.3s;
 }
 
 .cta:hover {
     background: #0288d1;
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
 }
 
 section {
@@ -108,12 +113,19 @@ section:nth-of-type(2) {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: slideUp 1s ease-in;
+    animation: slideUp 1.2s ease-in;
+}
+.project-card img {
+    max-width: 80%;  /* Adjust the width to a smaller percentage */
+    height: auto;  /* Maintain the aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block;  /* Make sure the image is block-level for centering */
 }
 
+
 .project-card:hover {
-    transform: translateY(-5px) rotate(1deg);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
@@ -134,18 +146,31 @@ footer {
 }
 
 /* Responsive Design */
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    .cta {
+        padding: 0.8rem 2rem;
+    }
+}
+
 @media (min-width: 1200px) {
     .hero h1 {
         font-size: 4rem;
     }
+
     .hero p {
         font-size: 1.4rem;
     }
-}
-
 
     .projects-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -181,23 +206,25 @@ footer {
         background-position: 0% 50%;
     }
 }
+
+/* Contact Section */
 #contact {
     background-color: #f4f4f9;
-    padding: 40px 20px;
+    padding: 20px 15px;  /* Reduced padding */
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
 
 #contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;  /* Reduced the font size */
+    margin-bottom: 15px;  /* Reduced margin */
     color: #333;
 }
 
 #contact p {
-    font-size: 1.1rem;
+    font-size: 1rem;  /* Reduced font size */
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 15px;  /* Reduced margin */
 }
 
 #contact a {
@@ -210,59 +237,35 @@ footer {
     text-decoration: underline;
 }
 
-.social-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.social-links li {
-    margin: 0 15px;
-}
-
-.social-links a {
-    font-size: 2rem; /* Increase or decrease this value to adjust the size of the icons */
-    color: #333;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #4CAF50;
-    transform: scale(1.2); /* Slightly increase the size on hover */
-}
-
-/* Optional: Add a form in the contact section */
 #contact form {
-    margin-top: 30px;
+    margin-top: 20px;
     display: grid;
-    gap: 10px;
+    gap: 8px;  /* Reduced gap between form fields */
     justify-items: center;
 }
 
 #contact form input, #contact form textarea {
-    padding: 10px;
-    width: 80%;
-    max-width: 400px;
+    padding: 8px;  /* Reduced padding */
+    width: 70%;  /* Reduced width */
+    max-width: 350px;  /* Reduced max width */
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9rem;  /* Smaller font size */
     box-sizing: border-box;
 }
 
 #contact form button {
-    padding: 12px 25px;
+    padding: 10px 20px;  /* Reduced padding */
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;  /* Smaller font size */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #contact form button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
-
